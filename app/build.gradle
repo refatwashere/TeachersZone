@@ -6,38 +6,51 @@
  */
 
 plugins {
-    // Apply the application plugin to add support for building a CLI application in Java.
-    id 'application'
+    id 'com.android.application'
 }
 
-repositories {
-    // Use Maven Central for resolving dependencies.
-    mavenCentral()
-}
+android {
+    namespace 'com.refat.teacherszone'
+    compileSdk 34 // Or your latest compileSdk version
 
-dependencies {
-    // Use JUnit Jupiter for testing.
-    testImplementation libs.junit.jupiter
+    defaultConfig {
+        applicationId "com.refat.teacherszone"
+        minSdk 21
+        targetSdk 34 // Or your latest targetSdk version
+        versionCode 1
+        versionName "1.0"
 
-    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
 
-    // This dependency is used by the application.
-    implementation libs.guava
-}
-
-// Apply a specific Java toolchain to ease working on different environments.
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
-application {
-    // Define the main class for the application.
-    mainClass = 'teacherszone.App'
-}
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0' // Latest Material Design version
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
 
-tasks.named('test') {
-    // Use JUnit Platform for unit tests.
-    useJUnitPlatform()
+    // Room Persistence Library (for local database)
+    def room_version = "2.6.1" // Use the latest stable version
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+
+    // Optional: for RxJava support with Room
+    // implementation "androidx.room:room-rxjava2:$room_version"
+    // Optional: for Guava ListenableFuture support with Room
+    // implementation "androidx.room:room-guava:$room_version"
+    // Test helpers
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
 }

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 @rem
 @rem Copyright 2015 the original author or authors.
 @rem
@@ -91,7 +90,6 @@ exit /b %EXIT_CODE%
 if "%OS%"=="Windows_NT" endlocal
 
 :omega
-=======
 @rem
 @rem Copyright 2015 the original author or authors.
 @rem
@@ -181,4 +179,3 @@ exit /b 1
 if "%OS%"=="Windows_NT" endlocal
 
 :omega
->>>>>>> e5dffeb39efc2754abdc70afdbb86012780607c1

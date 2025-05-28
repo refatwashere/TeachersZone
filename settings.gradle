@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Teachers Zone"
+rootProject.name = "TeachersZone"
 include ':app'

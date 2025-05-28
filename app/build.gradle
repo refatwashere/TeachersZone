@@ -16,14 +16,16 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
+    android {
     signingConfigs {
         release {
-            storeFile file(System.getenv("SIGNING_STORE_FILE"))
-            storePassword System.getenv("SIGNING_STORE_PASSWORD")
-            keyAlias System.getenv("SIGNING_KEY_ALIAS")
-            keyPassword System.getenv("SIGNING_KEY_PASSWORD")
+            storeFile file("/path/to/your/keystore.jks")
+            storePassword "your_store_password"
+            keyAlias "your_key_alias"
+            keyPassword "your_key_password"
         }
     }
+
     buildTypes {
         release {
             minifyEnabled true
@@ -36,7 +38,7 @@ android {
             shrinkResources false
         }
     }
-
+}
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11

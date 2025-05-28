@@ -1,0 +1,31 @@
+<!-- File: res/values/strings.xml -->
+<resources>
+    <string name="app_name">TeachersZone</string>
+
+    <!-- LoginActivity -->
+    <string name="login_title">TeachersZone Login</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="school_hint">School Name</string>
+    <string name="login_button">Login</string>
+    <string name="signup_button">Sign Up</string>
+
+    <!-- MainActivity -->
+    <string name="manage_materials">Manage Study Materials</string>
+    <string name="settings">Settings</string>
+    <string name="logout">Logout</string>
+
+    <!-- SettingsActivity -->
+    <string name="settings_title">Settings</string>
+    <string name="enable_notifications">Enable Notifications</string>
+    <string name="reset_logout">Reset &amp; Logout</string>
+    <string name="export_share">Export &amp; Share DB</string>
+
+    <!-- StudyMaterialsActivity -->
+    <string name="add_material">Add</string>
+    <string name="update_material">Update</string>
+    <string name="clear_form">Clear</string>
+    <string name="materials_list">Study Materials:</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+</resources>
